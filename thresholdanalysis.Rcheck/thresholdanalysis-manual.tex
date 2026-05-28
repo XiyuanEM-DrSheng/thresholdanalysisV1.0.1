@@ -1,0 +1,171 @@
+\nonstopmode{}
+\documentclass[a4paper]{book}
+\usepackage[times,inconsolata,hyper]{Rd}
+\usepackage{makeidx}
+\makeatletter\@ifl@t@r\fmtversion{2018/04/01}{}{\usepackage[utf8]{inputenc}}\makeatother
+% \usepackage{graphicx} % @USE GRAPHICX@
+\makeindex{}
+\begin{document}
+\chapter*{}
+\begin{center}
+{\textbf{\huge Package `thresholdanalysis'}}
+\par\bigskip{\large \today}
+\end{center}
+\ifthenelse{\boolean{Rd@use@hyper}}{\hypersetup{pdftitle = {thresholdanalysis: Threshold Effects in Regression Models}}}{}
+\ifthenelse{\boolean{Rd@use@hyper}}{\hypersetup{pdfauthor = {Song Sheng}}}{}
+\begin{description}
+\raggedright{}
+\item[Title]\AsIs{Threshold Effects in Regression Models}
+\item[Version]\AsIs{1.0.0}
+\item[Description]\AsIs{
+Provides a unified framework for detecting and modeling threshold effects 
+in logistic regression, linear regression, and Cox proportional hazards models.
+The package implements automated threshold identification using restricted cubic splines (RCS) 
+and generalized additive models (GAM) with profile likelihood optimization.
+Key features include:
+- Confounder-adjusted analyses with 95% confidence intervals for threshold estimates
+- Visualization of odds ratios (OR), hazard ratios (HR), and beta coefficients with 95% CI bands
+- Excel-ready output of model coefficients and likelihood ratio test results
+- Segmented regression modeling via X1/X2 variables for piecewise linear/nonlinear effects
+Primary applications encompass dose-response relationship analysis, 
+exposure threshold determination in clinical research, and epidemiological studies.}
+\item[License]\AsIs{GPL-3}
+\item[Encoding]\AsIs{UTF-8}
+\item[Roxygen]\AsIs{list(markdown = TRUE)}
+\item[Imports]\AsIs{dplyr, ggplot2, survival, openxlsx, broom, lmtest, mgcv,
+purrr, readr, readxl, rms, scales, splines}
+\item[Suggests]\AsIs{knitr, rmarkdown}
+\item[Config/roxygen2/version]\AsIs{8.0.0}
+\item[NeedsCompilation]\AsIs{no}
+\item[Author]\AsIs{Song Sheng [aut, cre]}
+\item[Maintainer]\AsIs{Song Sheng }\email{747367050@qq.com}\AsIs{}
+\end{description}
+\Rdcontents{Contents}
+\HeaderA{cox\_threshold}{Cox Proportional Hazards Model with Threshold Effect Analysis}{cox.Rul.threshold}
+%
+\begin{Description}
+This function performs a threshold effect analysis using Cox proportional hazards models,
+including restricted cubic spline (RCS) modeling for the focal variable,
+threshold determination, and model comparison \strong{adjusted for confounders}.
+HR+95\%CI visualization with explicit threshold marking.
+Outputs include Excel results and analysis objects.
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+cox_threshold(formula, data, var_name, rcs_nodes = 4)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{formula}] A formula specifying the model \strong{including both focal variable (var\_name) and confounders}.
+Example: \code{Surv(time, status) \textasciitilde{} focal\_var + confounder1 + confounder2}
+
+\item[\code{data}] Data frame containing all variables in the formula
+
+\item[\code{var\_name}] Name of the focal variable to analyze for threshold effects
+
+\item[\code{rcs\_nodes}] Number of knots for RCS (default=4) applied to focal variable
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+List containing:
+\begin{itemize}
+
+\item{} cutoff: Optimal threshold value
+\item{} mdl0: Original model with all predictors (focal + confounders)
+\item{} mdl1: Segmented model (X1/X2 for focal variable + confounders)
+\item{} mdl2: Threshold test model (focal variable + X2 + confounders)
+\item{} plot: Visualization object of HR curve with threshold marker
+
+\end{itemize}
+
+\end{Value}
+\HeaderA{linear\_threshold}{Linear Regression with Threshold Effect Analysis}{linear.Rul.threshold}
+%
+\begin{Description}
+This function performs a threshold effect analysis using linear regression models,
+including restricted cubic spline (RCS) modeling for the focal variable,
+threshold determination, and model comparison \strong{adjusted for confounders}.
+Regression coefficient+95\%CI visualization with explicit threshold marking.
+Outputs include Excel results and analysis objects.
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+linear_threshold(formula, data, var_name, rcs_nodes = 4)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{formula}] A formula specifying the model \strong{including both focal variable (var\_name) and confounders}.
+Example: \code{outcome \textasciitilde{} focal\_var + confounder1 + confounder2}
+
+\item[\code{data}] Data frame containing all variables in the formula
+
+\item[\code{var\_name}] Name of the focal variable to analyze for threshold effects
+
+\item[\code{rcs\_nodes}] Number of knots for RCS (default=4) applied to focal variable
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+List containing:
+\begin{itemize}
+
+\item{} cutoff: Optimal threshold value
+\item{} mdl0: Original model with all predictors
+\item{} mdl1: Segmented model (X1/X2 for focal variable + confounders)
+\item{} mdl2: Threshold test model (focal variable + X2 + confounders)
+\item{} plot: Visualization object of coefficient curve with threshold marker
+
+\end{itemize}
+
+\end{Value}
+\HeaderA{logistic\_threshold}{Logistic Regression with Threshold Effect Analysis}{logistic.Rul.threshold}
+%
+\begin{Description}
+This function performs a threshold effect analysis using logistic regression,
+including restricted cubic spline (RCS) modeling for the focal variable,
+threshold determination, and model comparison \strong{adjusted for confounders}.
+OR+95\%CI visualization with explicit threshold marking.
+Outputs include Excel results and analysis objects.
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+logistic_threshold(formula, data, var_name, rcs_nodes = 4)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{formula}] A formula specifying the model \strong{including both focal variable (var\_name) and confounders}.
+Example: \code{outcome \textasciitilde{} focal\_var + confounder1 + confounder2}
+
+\item[\code{data}] Data frame containing all variables in the formula
+
+\item[\code{var\_name}] Name of the focal variable to analyze for threshold effects
+
+\item[\code{rcs\_nodes}] Number of knots for RCS (default=4) applied to focal variable
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+List containing:
+\begin{itemize}
+
+\item{} cutoff: Optimal threshold value
+\item{} mdl0: Original model with all predictors (focal + confounders)
+\item{} mdl1: Segmented model (X1/X2 for focal variable + confounders)
+\item{} mdl2: Threshold test model (focal variable + X2 + confounders)
+\item{} plot: Visualization object of OR curve with threshold marker
+
+\end{itemize}
+
+\end{Value}
+\printindex{}
+\end{document}

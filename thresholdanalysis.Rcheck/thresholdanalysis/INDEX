@@ -1,0 +1,6 @@
+cox_threshold           Cox Proportional Hazards Model with Threshold
+                        Effect Analysis
+linear_threshold        Linear Regression with Threshold Effect
+                        Analysis
+logistic_threshold      Logistic Regression with Threshold Effect
+                        Analysis

@@ -1,0 +1,8 @@
+# 忽略项目文件
+^thresholdanalysis\.Rproj$
+
+# 忽略用户配置目录
+^\.Rproj\.user$
+
+# 忽略隐藏数据文件
+^R/inst/extdata/\.RData$

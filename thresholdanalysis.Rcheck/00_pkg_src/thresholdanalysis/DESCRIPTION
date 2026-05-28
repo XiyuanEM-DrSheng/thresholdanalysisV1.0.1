@@ -1,0 +1,33 @@
+Package: thresholdanalysis
+Title: Threshold Effects in Regression Models
+Version: 1.0.0
+Authors@R: 
+    person(
+        given = "Song",
+        family = "Sheng",
+        email = "747367050@qq.com",
+        role = c("aut", "cre")
+    )
+Description: 
+    Provides a unified framework for detecting and modeling threshold effects 
+    in logistic regression, linear regression, and Cox proportional hazards models.
+    The package implements automated threshold identification using restricted cubic splines (RCS) 
+    and generalized additive models (GAM) with profile likelihood optimization.
+    Key features include:
+    - Confounder-adjusted analyses with 95% confidence intervals for threshold estimates
+    - Visualization of odds ratios (OR), hazard ratios (HR), and beta coefficients with 95% CI bands
+    - Excel-ready output of model coefficients and likelihood ratio test results
+    - Segmented regression modeling via X1/X2 variables for piecewise linear/nonlinear effects
+    Primary applications encompass dose-response relationship analysis, 
+    exposure threshold determination in clinical research, and epidemiological studies.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports: dplyr, ggplot2, survival, openxlsx, broom, lmtest, mgcv,
+        purrr, readr, readxl, rms, scales, splines
+Suggests: knitr, rmarkdown
+Config/roxygen2/version: 8.0.0
+NeedsCompilation: no
+Packaged: 2026-05-27 12:38:32 UTC; 74736
+Author: Song Sheng [aut, cre]
+Maintainer: Song Sheng <747367050@qq.com>

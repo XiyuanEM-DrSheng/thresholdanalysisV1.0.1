@@ -1,0 +1,97 @@
+* using log directory 'C:/Users/74736/Desktop/thresholdanalysis/thresholdanalysis.Rcheck'
+* using R version 4.5.2 (2025-10-31 ucrt)
+* using platform: x86_64-w64-mingw32
+* R was compiled by
+    gcc.exe (GCC) 14.3.0
+    GNU Fortran (GCC) 14.3.0
+* running under: Windows 11 x64 (build 26200)
+* using session charset: UTF-8
+* checking for file 'thresholdanalysis/DESCRIPTION' ... OK
+* this is package 'thresholdanalysis' version '1.0.0'
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking whether package 'thresholdanalysis' can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking code files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... WARNING
+'library' or 'require' calls not declared from:
+  'broom' 'dplyr' 'ggplot2' 'lmtest' 'mgcv' 'openxlsx' 'purrr' 'readr'
+  'rms' 'splines' 'survival'
+'library' or 'require' calls in package code:
+  'broom' 'dplyr' 'ggplot2' 'lmtest' 'mgcv' 'openxlsx' 'purrr' 'readr'
+  'rms' 'splines' 'survival'
+  Please use :: or requireNamespace() instead.
+  See section 'Suggested packages' in the 'Writing R Extensions' manual.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+cox_threshold: no visible binding for '<<-' assignment to 'dd'
+cox_threshold: no visible binding for global variable 'dd'
+cox_threshold: no visible binding for global variable 'low'
+cox_threshold: no visible binding for global variable 'up'
+linear_threshold: no visible binding for global variable 'x'
+linear_threshold: no visible binding for global variable 'low'
+linear_threshold: no visible binding for global variable 'up'
+linear_threshold : extract_var_results: no visible binding for global
+  variable 'term'
+linear_threshold : extract_var_results: no visible binding for global
+  variable 'estimate'
+linear_threshold : extract_var_results: no visible binding for global
+  variable 'conf.low'
+linear_threshold : extract_var_results: no visible binding for global
+  variable 'conf.high'
+linear_threshold : extract_var_results: no visible binding for global
+  variable 'p.value'
+logistic_threshold: no visible global function definition for ':='
+logistic_threshold: no visible binding for global variable 'x'
+logistic_threshold: no visible binding for global variable 'fit'
+logistic_threshold: no visible binding for global variable 'low'
+logistic_threshold: no visible binding for global variable 'up'
+logistic_threshold : extract_var_results: no visible binding for global
+  variable 'term'
+logistic_threshold : extract_var_results: no visible binding for global
+  variable 'estimate'
+logistic_threshold : extract_var_results: no visible binding for global
+  variable 'conf.low'
+logistic_threshold : extract_var_results: no visible binding for global
+  variable 'conf.high'
+logistic_threshold : extract_var_results: no visible binding for global
+  variable 'p.value'
+Undefined global functions or variables:
+  := conf.high conf.low dd estimate fit low p.value term up x
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... NONE
+* checking PDF version of manual ... WARNING
+LaTeX errors when creating PDF version.
+This typically indicates Rd problems.
+LaTeX errors found:
+* checking PDF version of manual without index ... OK
+* DONE
+Status: 2 WARNINGs, 1 NOTE
