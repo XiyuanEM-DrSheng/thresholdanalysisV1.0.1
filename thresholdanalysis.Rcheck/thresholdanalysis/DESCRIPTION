@@ -31,4 +31,4 @@ NeedsCompilation: no
 Packaged: 2026-05-27 12:38:32 UTC; 74736
 Author: Song Sheng [aut, cre]
 Maintainer: Song Sheng <747367050@qq.com>
-Built: R 4.5.2; ; 2026-05-27 12:42:55 UTC; windows
+Built: R 4.6.0; ; 2026-05-28 10:24:21 UTC; windows
